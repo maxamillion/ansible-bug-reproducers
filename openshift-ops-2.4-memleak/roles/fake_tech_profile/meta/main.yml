@@ -1,0 +1,21 @@
+---
+galaxy_info:
+  author: Nobody
+  description: Fake Tech Profile for testing
+  company: Testing ACME Inc
+  license: MIT
+  min_ansible_version: 2.3
+  platforms:
+  - name: EL
+    versions:
+    - 7
+  - name: Fedora
+    versions:
+    - 26
+    - 27
+  categories:
+  - system
+dependencies:
+
+- name: Test role by name
+  role: ops_roles/some_role
