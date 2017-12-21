@@ -16,7 +16,10 @@ def main():
         ),
     )
 
-    module.exit_json(msg=module.params["something_to_say"])
+    module.exit_json(
+        msg=module.params["something_to_say"],
+        changed=False
+    )
 
 
 if __name__ == "__main__":

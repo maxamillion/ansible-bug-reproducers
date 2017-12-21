@@ -5,6 +5,8 @@
   include_role:
     name: tools_roles/lib_another_role
 
+- debug: msg="Role tools_roles/lib_another_role is supposedly loaded now"
+
 - name: test the role library module somelibrarymod loaded via include_role
   somelibrarymod:
     something_to_say: "Hello from lib_another_role via include_role in ops_roles/some_role"
