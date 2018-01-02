@@ -1,0 +1,14 @@
+---
+
+- name: debug1
+  debug:
+    msg:
+      - "{{ somevar }}"
+
+- name: "Include inc.yml"
+  include_tasks: "inc.yml"
+
+- name: debug3
+  debug:
+    msg:
+      - "{{ somevar }}"

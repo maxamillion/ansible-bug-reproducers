@@ -1,0 +1,9 @@
+---
+
+- name: Test playbook
+  hosts: workstation
+  serial: 1
+  gather_facts: true
+  roles:
+    - { role: role2, somevar: value1 }
+    - { role: role2, somevar: value2 }

@@ -1,0 +1,6 @@
+---
+
+- name: debug2
+  debug:
+    msg:
+      - "{{ somevar }}"
