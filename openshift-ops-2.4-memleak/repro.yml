@@ -1,0 +1,20 @@
+#!/usr/bin/ansible-playbook
+---
+- name: "Reproduce 2.4.x memory leak"
+  hosts: everything
+#  hosts: localhost
+  gather_facts: no
+  strategy: mem_profile
+
+  roles:
+  - tools_roles/lib_another_role
+  post_tasks:
+  - name: load repoquery module
+    include_role:
+      name: tools_roles/lib_another_role
+
+    static: true
+
+  - name: Say something
+    somelibrarymod:
+      something_to_say: atomic-openshift

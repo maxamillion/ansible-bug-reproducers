@@ -1,0 +1,5 @@
+[everything]
+localhost[1:100]              ansible_connection=local ansible_python_interpreter=/usr/bin/python3
+#tcvirt[1:100]               ansible_user=root ansible_host=tcvirtj:wq
+
+
