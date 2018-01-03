@@ -1,7 +1,0 @@
-#!/usr/bin/ansible-playbook
----
-- name: "Start role inheritance chain"
-  hosts: localhost
-  roles:
-  - fake_tech_profile
-
