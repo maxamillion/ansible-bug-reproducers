@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: workstation
   tasks:
     - name: assert group_vars_variable is defined
       assert:
