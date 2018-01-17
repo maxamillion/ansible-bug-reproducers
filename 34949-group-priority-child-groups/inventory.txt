@@ -1,29 +1,19 @@
-[networking:children]
-networking-hosts
-
-[networking-hosts]
-priority5.example.com      ansible_host=localhost ansible_connection=local
-
-[networking-hosts:vars]
-ansible_group_priority=5
-
-[hardware:children]
-hardware-hosts
-
-[hardware-hosts]
-priority10.example.com      ansible_host=localhost ansible_connection=local
-
-[hardware-hosts:vars]
-ansible_group_priority=10
+[allthethingsprio:children]
+prio10
+prio5
 
 [prio5]
 priority5.example.com      ansible_host=localhost ansible_connection=local
+inboth.example.com      ansible_host=localhost ansible_connection=local
 
 [prio5:vars]
 ansible_group_priority=5
+thevar="prio5_var"
 
 [prio10]
 priority10.example.com      ansible_host=localhost ansible_connection=local
+inboth.example.com      ansible_host=localhost ansible_connection=local
 
 [prio10:vars]
 ansible_group_priority=10
+thevar="prio10_var"

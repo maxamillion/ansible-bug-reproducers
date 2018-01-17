@@ -1,12 +1,7 @@
 ---
 - name: test group priority
-  hosts: prio10:prio5
+  hosts: allthethingsprio
   gather_facts: no
   tasks:
     - debug: msg="do some stuff"
-
-- name: test group priority inheritance
-  hosts: hardware:networking
-  gather_facts: no
-  tasks:
-    - debug: msg="do some stuff"
+    - debug: var=thevar
