@@ -1,0 +1,26 @@
+---
+- name: Example of loops with incorrect data type
+  hosts: localhost
+  gather_facts: false
+  vars:
+    - a_list: ["this", "is", "a", "list"]
+    - a_dict: {"this":"is", "a": "dict"}
+  tasks:
+
+    - debug:
+        msg: "with_list passed a list: {{item}}"
+      with_list: "{{ a_list }}"
+
+    - debug:
+        msg: "with_dict passed a dict: {{item}}"
+      with_dict: "{{ a_dict }}"
+
+    - debug:
+        msg: "with_list passed a dict: {{item}}"
+      with_list: "{{ a_dict }}"
+
+    - debug:
+        msg: "with_dict passed a list: {{item}}"
+      with_dict: "{{ a_list }}"
+
+
