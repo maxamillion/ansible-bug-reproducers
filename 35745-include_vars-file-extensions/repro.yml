@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Fetch answer data
+    git:
+      repo: "https://github.com/maxamillion/ansible-bug-reproducers.git"
+      version: master
+      dest: /tmp/myvars/
+      force: yes
+  - include_vars:
+      name: collected
+      dir: "/tmp/myvars/35745-include_vars-file-extensions/vars"
+      depth: 1
+  - debug:
+       var: collected
