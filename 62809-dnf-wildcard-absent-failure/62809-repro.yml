@@ -1,0 +1,17 @@
+---
+- name: reproduce dnf wildcard failure (62809)
+  hosts: rhel7:rhel8
+  remote_user: admiller
+  become: yes
+  tasks:
+    - yum:
+        name: lohit-*-fonts
+        state: present
+
+    - yum:
+        name: lohit-*-fonts
+        state: absent
+
+    - yum:
+        name: lohit-*-fonts
+        state: absent
